@@ -6,7 +6,7 @@ var salt = bcrypt.genSaltSync(10);
 
 //JAWSDB for Heroku deployment
 if (process.env.DEPLOYED === 'TRUE'){
-  var orm = new Sequelize(process.env.mysql://ye3i5ax1o6lnj5zh:dhps4ib6g7afhefy@uf63wl4z2daq9dbb.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/hnavysl54secxihi);
+  var orm = new Sequelize(process.env.JAWSDB_URL);
 } else {
   var orm = new Sequelize('Pistonsdb', 'root', '');
 }
